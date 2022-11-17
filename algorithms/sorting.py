@@ -415,7 +415,7 @@ if __name__ == "__main__":
 # sorted:  True
 #
 # <mergesort2>
-# consumed time:  0.026575803756713867 s (10000 elements)
+# consumed time:  0.023736000061035156 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
 #
