@@ -172,9 +172,9 @@ def mergesort3(arr):
 def bubblesort(arr):
     n = len(arr)
     for i in range(n - 1):
-        for k in range(n - 1 - i):
-            if arr[k] > arr[k + 1]:
-                arr[k], arr[k + 1] = arr[k + 1], arr[k]
+        for left in range(n - 1 - i):
+            if arr[left] > arr[left + 1]:
+                arr[left], arr[left + 1] = arr[left + 1], arr[left]
     return arr
 
 
