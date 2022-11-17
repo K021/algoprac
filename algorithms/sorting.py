@@ -1,5 +1,3 @@
-# PYTHON_ARGCOMPLETE_OK
-
 from random import randint
 from time import time
 from collections import deque
