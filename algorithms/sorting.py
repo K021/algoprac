@@ -304,6 +304,7 @@ def test_sort(
     print_arr=False,
 ):
     print(f"<{sort_func.__name__}>")
+    assert callable(sort_func)
 
     unsorted_base = [2, 5, 3, 1, 7, 0, 9, 8, 4, 3, 4, 6, 8, 2] if not arr else arr
     unsorted = (
