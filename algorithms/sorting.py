@@ -144,6 +144,31 @@ def mergesort2(arr):
     return merged
 
 
+def mergesort3(arr):
+    if len(arr) < 2:
+        return arr
+
+    h = len(arr) // 2
+    a = mergesort3(arr[:h])
+    b = mergesort3(arr[h:])
+
+    merged = []
+    ai, bi = 0, 0
+    an, bn = len(a), len(b)
+    while ai < an and bi < bn:
+        av, bv = a[ai], b[bi]
+        if av <= bv:
+            merged.append(av)
+            ai += 1
+        else:
+            merged.append(bv)
+            bi += 1
+    merged.extend(a[ai:])
+    merged.extend(b[bi:])
+
+    return merged
+
+
 def bubblesort(arr):
     n = len(arr)
     for i in range(n - 1):
@@ -382,6 +407,11 @@ if __name__ == "__main__":
 #
 # <mergesort2>
 # consumed time:  0.026575803756713867 s (10000 elements)
+# elements conservation:  True
+# sorted:  True
+# 
+# <mergesort3>
+# consumed time:  0.016479969024658203 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
 #
