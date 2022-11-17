@@ -1,3 +1,5 @@
+# PYTHON_ARGCOMPLETE_OK
+
 from random import randint
 from time import time
 from collections import deque
@@ -363,20 +365,29 @@ def test_sort(
 # test_sort(mergesort_test, arr=arr, random=False, end='\n', print_arr=False)
 # test_sort(shellsort, arr_size=10000, random=True, end="\n", print_arr=False)
 
-
 if __name__ == "__main__":
     import argparse
+    from types import FunctionType
 
     parser = argparse.ArgumentParser()
-    parser.add_argument("-n", "--name", help="sort function name", type=str)
+    parser.add_argument(
+        "-n",
+        "--name",
+        help="sort function name",
+        type=str,
+        choices=[
+            name for name, obj in locals().items() if isinstance(obj, FunctionType)
+        ],
+    )
 
     args = parser.parse_args()
 
     sorting_func = globals().get(args.name)
-    if not sorting_func:
+    if sorting_func:
+        test_sort(sorting_func, arr_size=10000, random=True, end="\n", print_arr=False)
+    else:
         print(f"invalid function name: {args.name}")
 
-    test_sort(sorting_func, arr_size=10000, random=True, end="\n", print_arr=False)
 
 
 ## 성능 평가 결과 ##
@@ -409,7 +420,7 @@ if __name__ == "__main__":
 # consumed time:  0.026575803756713867 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
-# 
+#
 # <mergesort3>
 # consumed time:  0.016479969024658203 s (10000 elements)
 # elements conservation:  True
