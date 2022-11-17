@@ -165,7 +165,7 @@ def selectionsort(arr):
 
 
 def selectionsort2(arr):
-    for base in range(len(arr)-1):
+    for base in range(len(arr) - 1):
         mini = arr[base]
         minind = base
         for candidate in range(base + 1, len(arr)):
@@ -224,14 +224,14 @@ def shellsort2(arr):
                         arr[mid + gap] = arr[mid]
                     arr[left + gap] = right_n
                     break
-    
+
     gap = len(arr)
     while gap > 1:
         gap //= 2
         gap += 1 if gap % 2 == 0 else 0
         for start in range(gap):
             insertionsort(arr, start, gap)
-    
+
     return arr
 
 
@@ -270,19 +270,13 @@ def shellsort_print(arr):
     return arr
 
 
-def selectionsort_test(arr):
-    n = len(arr)
-    for i in range(n - 1):
-        mini_idx = i
-        for k in range(i + 1, n):
-            if arr[k] < arr[mini_idx]:
-                mini_idx = k
-        arr[i], arr[mini_idx] = arr[mini_idx], arr[i]
-    return arr
-
-
 def test_sort(
-    sort_func, arr_size=100000, arr=None, random=True, end=None, print_arr=False
+    sort_func,
+    arr_size=100000,
+    arr=None,
+    random=True,
+    end=None,
+    print_arr=False,
 ):
     print(f"<{sort_func.__name__}>")
 
@@ -400,7 +394,7 @@ if __name__ == "__main__":
 # consumed time:  1.9003660678863525 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
-# 
+#
 # <selectionsort2>
 # consumed time:  1.7047178745269775 s (10000 elements)
 # elements conservation:  True
@@ -415,9 +409,9 @@ if __name__ == "__main__":
 # consumed time:  0.09445810317993164 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
-# 
+#
 # <shellsort2>
 # consumed time:  0.09250998497009277 s (10000 elements)
 # elements conservation:  True
 # sorted:  True
-# 
+#
