@@ -10,11 +10,14 @@ class TestFailed(Exception):
 
 
 class TestCase(BaseModel):
+    """Test case for a solution function"""
     input: Tuple
     output: Any
 
 
 class TestManager:
+    """Test manager for a solution function"""
+
     def __init__(self, test_cases: Iterable[TestCase]):
         self.test_cases = test_cases
 
