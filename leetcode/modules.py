@@ -29,4 +29,5 @@ class TestManager:
                     f"[TestCase #{case_number + 1}] "
                     f"Expected {test_case.output}, got {output}"
                 )
+
         print(f"All tests passed (Total TestCases: {len(self.test_cases)})")
