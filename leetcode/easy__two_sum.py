@@ -20,11 +20,11 @@ class Solution:
                 l += 1
         raise Exception("No Answer")
 
-inputs_and_answers = [
+INPUTS_AND_ANSWERS = [
     TestCase(input=([2, 7, 11, 15], 9), output=[0, 1]),
     TestCase(input=([3, 2, 4], 6), output=[1, 2]),
 ]
 
 if __name__ == "__main__":
-    test_manager = TestManager(inputs_and_answers)
+    test_manager = TestManager(INPUTS_AND_ANSWERS)
     test_manager.run(Solution().twoSum)
