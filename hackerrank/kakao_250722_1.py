@@ -3,7 +3,7 @@ def getDecryptedString(encrypted, k):
 
     for char in encrypted:
         pos = ord(char) - ord("A")
-        new_pos = (pos - (k % 26) + 26) % 26
+        new_pos = (pos - (k % 26)) % 26
         ret.append(chr(new_pos + ord("A")))
 
     return "".join(ret)
